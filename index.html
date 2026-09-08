@@ -146,13 +146,19 @@
 
   main{ max-width:980px; margin:0 auto; padding:40px 20px 90px; }
 
-  /* Hero */
+  /* Hero Card - Configurada para ocultarse excepto en Inicio */
   .hero{
     position:relative;
-    display:flex; flex-direction:column; align-items:center; text-align:center;
-    padding:50px 24px 60px;
+    display:none; /* Oculto por defecto */
+    flex-direction:column; align-items:center; text-align:center;
+    padding:30px 24px 40px;
     margin-bottom:12px;
   }
+  /* Solo mostrar Hero cuando la pestaña Inicio esté activa */
+  #app.show-hero .hero {
+    display: flex;
+  }
+
   .hero-card{
     position:relative; z-index:3;
     background:var(--paper);
@@ -278,7 +284,7 @@
   /* Redes Sociales y Links Externos Centrados */
   .social-row{ 
     display:flex; gap:12px; flex-wrap:wrap; margin:18px 0; 
-    justify-content: center; /* Centrado de redes externas */
+    justify-content: center;
   }
   .social-row a{
     display:inline-flex; align-items:center; gap:8px;
@@ -412,7 +418,7 @@
   </div>
 </div>
 
-<div id="app">
+<div id="app" class="show-hero">
 
   <header>
     <nav>
@@ -442,7 +448,7 @@
         <h1>Sara Catalina Puasapas Rosero</h1>
         <p class="role">"Conectando la lógica del código con el arte del tejido"</p>
         <p class="bio">
-          Soy Sara Catalina — para los amigos, Sarita.Estoy curso mi ultimo semestre de Ingeniería Electrónica en Pasto, Nariño, y tambien complementando esa formación con una especialización en Big Data. En mis ratos libres tejo amigurumis de estilo geek a
+          Soy Sara Catalina — para los amigos, Sarita. Estoy cursando mi último semestre de Ingeniería Electrónica en Pasto, Nariño, y también complementando esa formación con una especialización en Big Data. En mis ratos libres tejo amigurumis de estilo geek a
           través de <strong>Meguchis Creations</strong>. Esta página reúne esos dos mundos en un solo lugar.
         </p>
       </div>
@@ -693,32 +699,31 @@
         
         <div class="pets-grid">
           <div class="pet-card-col">
-            <img src="recursos/mascotas/9.jpg" alt="Manolo" onerror="this.src='https://via.placeholder.com/280x250/502A51/white?text=Manolo'">
+            <img src="recursos/mascotas/9.jpg" alt="Manolo" onerror="this.src='recursos/mascotas/9.jpeg'; this.onerror=function(){this.src='https://via.placeholder.com/280x250/502A51/white?text=Manolo'};">
             <h3 style="margin-top:14px; font-size:1.2rem;">Manolo</h3>
-            <p style="font-size:.88rem; padding:0 15px; margin:0;">Nuetro perrito que cuida de nosotros entre sueños, es nuestro compañero incondicional, alegre pero tambien algo callado. Siempre esta presente en los días de estudio, trasnocho y para tomar buenas siestas.</p>
+            <p style="font-size:.88rem; padding:0 15px; margin:0;">Nuestro perrito que cuida de nosotros entre sueños, es nuestro compañero incondicional, alegre pero también algo callado. Siempre está presente en los días de estudio, trasnocho y para tomar buenas siestas.</p>
           </div>
           <div class="pet-card-col">
-            <img src="recursos/mascotas/rudel.jpg" alt="Rudel 🐾" onerror="this.src='https://via.placeholder.com/280x250/7F2A53/white?text=Rudel'">
+            <img src="recursos/mascotas/rudel.jpg" alt="Rudel 🐾" onerror="this.src='recursos/mascotas/rudel.jpeg'; this.onerror=function(){this.src='https://via.placeholder.com/280x250/7F2A53/white?text=Rudel'};">
             <h3 style="margin-top:14px; font-size:1.2rem;">Rudel</h3>
             <p style="font-size:.88rem; padding:0 15px; margin:0;">Nuestro pequeño terremoto, un perrito que se caracterizaba por hacerse notar y por tener un gran apetito por las galletas. Nuestro pequeño angelito ahora nos cuida desde el cielo, tal y como lo hizo durante tantos años.</p>
           </div>
         </div>
 
-        <!-- Collage de las 17 Fotos de Mascotas -->
         <h3 style="font-size:1.1rem; text-align:center; margin:34px 0 14px;">Galería de Momentos 🐶🐕</h3>
         <div class="pets-collage">
           <div class="pets-collage-item"><img src="recursos/mascotas/1.jpg" alt="Mascotas 1" onerror="this.src='https://via.placeholder.com/200x200/502A51/white?text=Mascota+1'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/2.jpg" alt="Mascotas 2" onerror="this.src='https://via.placeholder.com/200x200/BA70A1/white?text=Mascota+2'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/3.jpg" alt="Mascotas 3" onerror="this.src='https://via.placeholder.com/200x200/7F2A53/white?text=Mascota+3'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/4.jpg" alt="Mascotas 4" onerror="this.src='https://via.placeholder.com/200x200/461D3B/white?text=Mascota+4'"></div>
-          <div class="pets-collage-item"><img src="recursos/mascotas/r1.jpg" alt="Mascotas 5" onerror="this.src='https://via.placeholder.com/200x200/502A51/white?text=Mascota+5'"></div>
+          <div class="pets-collage-item"><img src="recursos/mascotas/16.jpg" alt="Mascotas 5" onerror="this.src='https://via.placeholder.com/200x200/502A51/white?text=Mascota+5'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/jugando.gif" alt="Mascotas 6" onerror="this.src='https://via.placeholder.com/200x200/BA70A1/white?text=Mascota+6'"></div>
-          <div class="pets-collage-item"><img src="recursos/mascotas/m1.jpg" alt="Mascotas 7" onerror="this.src='https://via.placeholder.com/200x200/7F2A53/white?text=Mascota+7'"></div>
+          <div class="pets-collage-item"><img src="recursos/mascotas/18.jpg" alt="Mascotas 7" onerror="this.src='https://via.placeholder.com/200x200/7F2A53/white?text=Mascota+7'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/15.jpg" alt="Mascotas 8" onerror="this.src='https://via.placeholder.com/200x200/461D3B/white?text=Mascota+8'"></div>
-          <div class="pets-collage-item"><img src="recursos/mascotas/m2.jpg" alt="Mascotas 9" onerror="this.src='https://via.placeholder.com/200x200/502A51/white?text=Mascota+9'"></div>
+          <div class="pets-collage-item"><img src="recursos/mascotas/19.jpg" alt="Mascotas 9" onerror="this.src='https://via.placeholder.com/200x200/502A51/white?text=Mascota+9'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/8.jpg" alt="Mascotas 10" onerror="this.src='https://via.placeholder.com/200x200/BA70A1/white?text=Mascota+10'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/11.jpg" alt="Mascotas 11" onerror="this.src='https://via.placeholder.com/200x200/7F2A53/white?text=Mascota+11'"></div>
-          <div class="pets-collage-item"><img src="recursos/mascotas/r2.jpg" alt="Mascotas 12" onerror="this.src='https://via.placeholder.com/200x200/461D3B/white?text=Mascota+12'"></div>
+          <div class="pets-collage-item"><img src="recursos/mascotas/17.jpg" alt="Mascotas 12" onerror="this.src='https://via.placeholder.com/200x200/461D3B/white?text=Mascota+12'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/14.jpg" alt="Mascotas 13" onerror="this.src='https://via.placeholder.com/200x200/502A51/white?text=Mascota+13'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/manolo.jpg" alt="Mascotas 14" onerror="this.src='https://via.placeholder.com/200x200/BA70A1/white?text=Mascota+14'"></div>
           <div class="pets-collage-item"><img src="recursos/mascotas/10.jpg" alt="Mascotas 15" onerror="this.src='https://via.placeholder.com/200x200/7F2A53/white?text=Mascota+15'"></div>
@@ -771,6 +776,14 @@
       tabBtns.forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       const target = btn.dataset.tab;
+      
+      // Control de visibilidad del Hero (Solo visible en 'inicio')
+      if (target === 'inicio') {
+        app.classList.add('show-hero');
+      } else {
+        app.classList.remove('show-hero');
+      }
+
       sections.forEach(s=> s.classList.toggle('active', s.id === target));
       window.scrollTo({top:0, behavior:'smooth'});
     });
